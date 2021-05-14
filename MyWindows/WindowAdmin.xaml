@@ -1,0 +1,137 @@
+﻿<Window x:Class="LessonUserInfo.MyWindows.WindowAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LessonUserInfo.MyWindows"
+        mc:Ignorable="d"
+        Title="WindowAdmin" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="1">
+            <TextBlock Text="Поиск Фио"
+                      Width="200"
+                     Height="30"
+                       FontSize="20"
+                       >
+                
+            </TextBlock>
+            
+            <TextBox Name="txtsearch"
+                     Width="150"
+                     Height="30"
+                     Margin="30 0 0 0"
+                     FontSize="20"
+                     TextChanged="txtsearch_TextChanged"
+                     HorizontalAlignment="Center"
+                     HorizontalContentAlignment="Center">
+            </TextBox>
+            <TextBlock Text="Выбор Ролей"
+                      Width="150"
+                     Height="30"
+                       FontSize="20"
+                       Margin="20 0 0 0"
+                       >
+
+            </TextBlock>
+
+            <ComboBox Name="cmrole"
+                     Width="200"
+                     Height="30"
+                     Margin="30 0 0 0"
+                     FontSize="20"
+                      
+                     HorizontalAlignment="Center"
+                     HorizontalContentAlignment="Center" SelectionChanged="cmrole_SelectionChanged">
+            </ComboBox>
+        </WrapPanel>
+        <TextBlock Name="txtHello"
+                   FontSize="15"
+                   Width="300">
+            
+        </TextBlock>
+        <ListView Name="Lvinfo"
+                  Grid.Row="2">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="UserId"
+                                        DisplayMemberBinding="{Binding UserId}">
+                            
+                        </GridViewColumn>
+                        <GridViewColumn Header="LastName"
+                                        DisplayMemberBinding="{Binding LastName}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="FirstName"
+                                        DisplayMemberBinding="{Binding FirstName}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="MiddleName"
+                                        DisplayMemberBinding="{Binding MiddleName}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="Roleld"
+                                        DisplayMemberBinding="{Binding Role.Rolename}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="Genderld"
+                                        DisplayMemberBinding="{Binding Gender.Gendername}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="Dateofbirth"
+                                        DisplayMemberBinding="{Binding Dateofbirth}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="Login"
+                                        DisplayMemberBinding="{Binding Login}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="Password"
+                                        DisplayMemberBinding="{Binding Password}">
+
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Name="Btnadd"
+                Grid.Row="3"
+                Width="100"
+                HorizontalAlignment="Left"
+                Margin="20 0 0 0"
+                Content="Добавить"
+                Click="Btnadd_Click"
+                FontSize="15">
+            
+        </Button>
+        <Button Name="Btndelete"
+                Grid.Row="3"
+                Width="100"
+                HorizontalAlignment="Center"
+                Margin="0 0 0 0"
+                Content="Удалить"
+                FontSize="15"
+                Click="Btndelete_Click">
+
+        </Button>
+        <Button Name="Btnсрфтпу"
+                Grid.Row="3"
+                Width="100"
+                HorizontalAlignment="Right"
+                Margin="0 0 20 0"
+                Content="Изменить"
+                FontSize="15"
+                Click="Btnсрфтпу_Click">
+
+        </Button>
+    </Grid>
+</Window>

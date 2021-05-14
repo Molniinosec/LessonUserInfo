@@ -1,0 +1,69 @@
+﻿<Window x:Class="LessonUserInfo.MyWindows.WindowManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LessonUserInfo.MyWindows"
+        mc:Ignorable="d"
+        Title="WindowManager" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ListView Name="Lvinfo"
+                  Grid.Row="2">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="UserId"
+                                        DisplayMemberBinding="{Binding UserId}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="LastName"
+                                        DisplayMemberBinding="{Binding LastName}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="FirstName"
+                                        DisplayMemberBinding="{Binding FirstName}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="MiddleName"
+                                        DisplayMemberBinding="{Binding MiddleName}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="Roleld"
+                                        DisplayMemberBinding="{Binding Role.Rolename}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="Genderld"
+                                        DisplayMemberBinding="{Binding Gender.Gendername}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="Dateofbirth"
+                                        DisplayMemberBinding="{Binding Dateofbirth}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="Login"
+                                        DisplayMemberBinding="{Binding Login}">
+
+                        </GridViewColumn>
+                        <GridViewColumn Header="Password"
+                                        DisplayMemberBinding="{Binding Password}">
+
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Name="txtHello"
+                   FontSize="15"
+                   Width="300">
+
+        </TextBlock>
+    </Grid>
+</Window>
